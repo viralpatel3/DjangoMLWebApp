@@ -24,7 +24,7 @@ dataset = dataset.drop(['embarked'], axis=1)
 X = dataset.drop(['survived'], axis=1)
 y = dataset['survived']
 
-sc = MinMaxScaler(feature_range=(0, 1))
+sc = MinMaxScaler(clip=False)
 X_scaled = sc.fit_transform(X)
 
 log_model = LogisticRegression(C=1)
